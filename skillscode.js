@@ -18,7 +18,7 @@ const theimitationgameIntentHandler = {
             && Alexa.getIntentName(handlerInput.requestEnvelope) === 'theimitationgameIntent';
     },
     handle(handlerInput) {
-        const speakOutput = 'Welcome to the imitation game skill.';
+        const speakOutput = 'Would you like to ask another question?';
         return handlerInput.responseBuilder
             .speak(speakOutput)
             //.reprompt('add a reprompt if you want to keep the session open for the user to respond')
@@ -39,6 +39,9 @@ const HelpIntentHandler = {
             .reprompt(speakOutput)
             .getResponse();
     }
+    
+     
+       
 };
 const CancelAndStopIntentHandler = {
     canHandle(handlerInput) {
@@ -78,6 +81,7 @@ const IntentReflectorHandler = {
         return handlerInput.responseBuilder
             .speak(speakOutput)
             //.reprompt('add a reprompt if you want to keep the session open for the user to respond')
+
             .getResponse();
     }
 };
@@ -115,4 +119,5 @@ exports.handler = Alexa.SkillBuilders.custom()
     .addErrorHandlers(
         ErrorHandler,
     )
-    .lambda(); 
+    .lambda();
+
