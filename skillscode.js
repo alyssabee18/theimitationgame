@@ -21,7 +21,7 @@ const theimitationgameIntentHandler = {
         const speakOutput = 'Would you like to ask another question?';
         return handlerInput.responseBuilder
             .speak(speakOutput)
-            //.reprompt('add a reprompt if you want to keep the session open for the user to respond')
+            .reprompt('You can ask me another question if you would like, or say Goodbye!')
             .getResponse();
     }
 
@@ -32,7 +32,7 @@ const HelpIntentHandler = {
             && Alexa.getIntentName(handlerInput.requestEnvelope) === 'AMAZON.HelpIntent';
     },
     handle(handlerInput) {
-        const speakOutput = 'To start a conversation, you can ask questions like can machines think, what is your legacy, or what is the imitation game?';
+        const speakOutput = 'To start a conversation, you can ask questions like can machines think, what is your legacy, or what is the imitation game? If you are interested in closing this skill, simply say, Goodbye!';
 
         return handlerInput.responseBuilder
             .speak(speakOutput)
@@ -80,7 +80,7 @@ const IntentReflectorHandler = {
 
         return handlerInput.responseBuilder
             .speak(speakOutput)
-            //.reprompt('add a reprompt if you want to keep the session open for the user to respond')
+            .reprompt('You can ask me another question like, Who is Christopher, or Can you read me a letter you wrote?')
 
             .getResponse();
     }
@@ -120,4 +120,3 @@ exports.handler = Alexa.SkillBuilders.custom()
         ErrorHandler,
     )
     .lambda();
-
