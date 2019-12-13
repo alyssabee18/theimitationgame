@@ -53,6 +53,7 @@ const CancelAndStopIntentHandler = {
         const speakOutput = 'Goodbye, thank you for playing The Imitation Game!';
         return handlerInput.responseBuilder
             .speak(speakOutput)
+            .withShouldEndSession(true)
             .getResponse();
     }
 };
